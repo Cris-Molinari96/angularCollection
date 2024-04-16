@@ -1,0 +1,42 @@
+<h1>Articoli disponibili</h1>
+<table id="articoli" border="1">
+  <thead> <!-- * creazione colonne -->
+  <caption>Alimentari</caption> <!-- * intestazione tabella -->
+  <tr>
+    <!-- * inserimento campi colonne -->
+    <th>CodArt</th>
+    <th>Descrizione</th>
+    <th>Um</th>
+    <th>Pezzi</th>
+    <th>Peso(KG/LT)</th>
+    <th>Prezzo(€)</th>
+    <th>Disponibile</th>
+    <th>Data</th>
+  </tr>
+  </thead>
+  <tbody> <!-- * corpo tabella -->
+  <!-- * inserimento righe nella tabella -->
+  <tr *ngFor="let articolo of articoli">
+    <td>{{articolo.codArt}}</td>
+    <td>{{articolo.descrizione}}</td>
+    <td>{{articolo.um}}</td>
+    <td>{{articolo.pzCart}}</td>
+    <td>{{articolo.peso}}</td>
+    <td>{{articolo.prezzo | currency:'EUR'}}</td>
+    <td>{{articolo.active}}</td>
+    <td>{{articolo.data | date:'dd-MM-YYYY'}}</td>
+  </tr>
+  </tbody>
+</table>
+<!--! Card-->
+<!-- <div class="card" style="width: 18rem;">
+  <div class="card-body" *ngFor="let articolo of articoli">
+    <h5 class="card-title">{{articolo.codart}}</h5>
+    <p class="card-text">{{articolo.descrizione}}</p>
+    <p class="card-text">{{articolo.um}}</p>
+    <p class="card-text">{{articolo.peso}}</p>
+    <p class="card-text">{{articolo.prezzo}}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+-->

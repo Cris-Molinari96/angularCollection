@@ -1,0 +1,12 @@
+<!--Aggiunta server-->
+<div class="row">
+    <div class="col-xs-12">
+        <p>Add new server</p>
+        <label>Server name</label>
+        <input type="text" class="form-control" [(ngModel)]="serverName" />
+        <label>Server content</label>
+        <input type="text" class="form-control" [(ngModel)]="serverContent" />
+        <br>
+        <button class="btn btn-primary" (click)="onAddServer()"></button>
+    </div>
+</div>

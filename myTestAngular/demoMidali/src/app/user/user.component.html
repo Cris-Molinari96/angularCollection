@@ -1,0 +1,15 @@
+<div>
+  <label>Username</label>
+  <input type="text" class="form-control" [(ngModel)]="username"/>
+
+  <button (click)="welcomeUser()" class="btn btn-primary">Print first welcome</button>
+<!--  Cosa sta succedendo qui: Abbiamo la proprietà html del button, che viene disabilitata se il nome
+utente è una stringa vuota, non appena l'utente inserisce un dato, il butto viene attivato.
+
+In questo caso [disabled]="username === '' io mi sono legato alla proprietà del tag e il btn sarà disabilitato a seguito di una
+certa condizione
+-->
+  <button (click)="resetData()" class="btn btn-danger" [disabled]="username === '' ">Reset!</button>
+  <h6>{{username}}</h6>
+  <p>{{wMessage}}</p>
+</div>

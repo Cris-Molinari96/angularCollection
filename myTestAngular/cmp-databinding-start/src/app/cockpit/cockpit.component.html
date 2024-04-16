@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-12">
+    <p>Add new Servers or blueprints!</p>
+    <label>Server Name</label>
+<!-- Stiamo legando dinamicamente la proprietà serverName, questa viene aggiornata in tempo reale per questo utilizziamo il
+binding a doppio senso -->
+<!--    <input type="text" class="form-control" [(ngModel)]="serverName">-->
+    <input type="text" class="form-control" #nameInput>
+    <label>Server Content</label>
+    <input type="text" class="form-control" [(ngModel)]="serverContent">
+    <br>
+    <button
+      class="btn btn-primary"
+      (click)="onAddServer(nameInput)">Add Server</button>
+    <button
+      class="btn btn-primary"
+      (click)="onAddBlueprint()">Add Server Blueprint
+    </button>
+  </div>
+</div>

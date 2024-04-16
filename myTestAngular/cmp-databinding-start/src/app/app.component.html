@@ -1,0 +1,18 @@
+<div class="container">
+  <!-- Stiamo richiamando gli eventi che sono nella classe cockpit.component.ts,
+  questi eventi definiti nella classe cock. devono inviare dei dati i quali saranno
+  inseriti nell'array presente nella classe app.component.ts-->
+<app-cockpit
+  (serverCreated)="onAddServer($event)"
+  (blueprintCreated)="onAddBlueprint($event)"
+></app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+<!-- Mi sto legando alla proprietà definita in un altro componente,
+ossia alla prorietà della classe app.component (serverElement) -->
+      <app-server-element *ngFor="let serverElement of serverElements"
+                          [srvElement]="serverElement"></app-server-element>
+    </div>
+  </div>
+</div>

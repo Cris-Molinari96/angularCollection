@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-5">
+
+<!--    Mostriamo la lista di tutte le ricette disponibili -->
+    <app-list-recipes></app-list-recipes>
+  </div>
+
+  <div class="col-md-7">
+    <!--    Questo è il modo corretto per utilizzare il routing in angular,
+    abbiamo un componente padre, con all'interno annidati i suoi figli,
+    similmenete anche i percorsi per raggiungerli saranno setttati nello stesso modo,
+    tramite il router outlet possiamo gestirci la viusalizzazione dei componenti in base a l'url
+    ! Qui verrà caricato start-recipes.component,
+    * Quando viene aggiunto l'id verrà caricato detail-recipes, per arrivare a caricare detail.recipes,
+    ? dobbiamo passare per recipe-item il quale ci renderizza a detail-recipes in base alla ricetta di cui vuole ottenere dettagli-->
+    <router-outlet></router-outlet>
+  </div>
+</div>

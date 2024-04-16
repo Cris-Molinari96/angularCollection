@@ -1,0 +1,15 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-7">
+      <app-list-maga (articoloSelected)="showDetails = $event"></app-list-maga>
+    </div>
+    <div class="col-md-5">
+      <!-- ! Passare dati di input quindi dal padre al figlio, ci leghiamo alla proprietà della classe ts del
+       figlio -->
+      <app-details-item *ngIf="showDetails; else infoText" [articolo]="showDetails"></app-details-item>
+
+      <ng-template #infoText class="mt-5"><p>Please selected articolo!</p></ng-template>
+    </div>
+  </div>
+</div>

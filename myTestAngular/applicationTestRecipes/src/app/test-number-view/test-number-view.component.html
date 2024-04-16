@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="btnNumbers = !btnNumbers">Click button numbers</button>
+    </div>
+    <br><br>
+    <ul class="list-group">
+      <div *ngIf="btnNumbers">
+        <li class="list-group-item"
+            [ngClass]="{even: odd % 2 === 0}"
+            [ngStyle]="{backgroundColor: odd % 2 === 0 ? 'black' : 'transparent'}"
+            *ngFor="let odd of arrayNumberOdd">
+          {{odd}}
+        </li>
+      </div>
+
+      <div *ngIf="!btnNumbers">
+        <li class="list-group-item"
+            [ngClass]="{odd: even % 2 !== 0}"
+            [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'blue' : 'transparent'}"
+            *ngFor="let even of arrayNumberEven">
+          {{even}}
+        </li>
+      </div>
+    </ul>
+
+    <p appBasicHigh  [setBackColor]="'black'" [setFontColor]="'yellow'">Style me with basicDirective</p>
+    <p appBetterHigh [setBackColor]="'transparent'" [setFontColor]="'black'">Style me with betterDirective</p>
+  </div>
+</div>

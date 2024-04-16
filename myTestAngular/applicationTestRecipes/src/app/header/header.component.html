@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-md bg-danger">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Magantario</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!--<li class="nav-item">
+          &lt;!&ndash;! Vogliamo visualizzare un contenuto rispetto che un altro&ndash;&gt;
+          &lt;!&ndash; I parametri che abbiamo passato nelle () sono i dati che vengono esposti all'esterno e passati
+          al padre per poter visualizzare qualcosa rispetto che un altra cosa &ndash;&gt;
+          &lt;!&ndash;'home' viene inviato alla classe ts di header il quale avvalora una variabile e grazie ad eventEmitter e output
+          l'evento(dato) viene inviato al padre &ndash;&gt;
+          <a class="nav-link active" aria-current="page" href="#" (click) = "onSelect('home')">Home</a>
+        </li>-->
+        <li class="nav-item">
+          <!--Vogliamo mostrare un contenuto-->
+          <a class="nav-link active" aria-current="page" href="#" (click)="onSelect('list-maga')">List maga</a>
+        </li>
+        <li class="nav-item">
+          <!--Vogliamo mostrare un contenuto-->
+          <a class="nav-link active" aria-current="page" href="#" (click)="onSelect('shop-list')">Shop list</a>
+        </li>
+        <!--<ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>-->
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,22 @@
+<div class="container p-5">
+<!--  ! Prima facevamo il redirect con un button il quale richiamava un metodo e ci faceva visulalizzare i dettagli-->
+  <!--  <div class="card mt-5" style="cursor: pointer;">-->
+  <!--    <div class="card-body" style="cursor: pointer;">-->
+  <!--      <h4 class="list-group-item-heading">{{recipe.name}}</h4>-->
+  <!--      <a class="btn btn-primary" routerLinkActive="active" (click)="infoArticolo()">Info recipe</a>-->
+  <!--    </div>-->
+  <!--  </div>-->
+
+<!--? Adesso invece ci gestiamo questa visualizzazione in questo modo da dare anche uno stile-->
+<!--  Ogni volta che viene selezionato un item, viene attivata la rotta con il parametro dinamico, per cui
+viene mostrato sempre detail.component-->
+  <a style="cursor: pointer;"
+     [routerLink]="[recipe.id]"
+     routerLinkActive="active"
+     class="list-group-item clearfix card-link">
+    <div class="pull-left">
+      <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+      <p class="list-group-item-text">{{ recipe.description }}</p>
+    </div>
+  </a>
+</div>

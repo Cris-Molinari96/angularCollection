@@ -1,0 +1,12 @@
+<app-header (featureLoad)= showContent($event)></app-header>
+
+<div class="container">
+  <div class="row">
+<!--<app-test-number-view></app-test-number-view>-->
+    <div class="col-md-12">
+      <!--<app-home *ngIf="testFeature === 'home'"></app-home>-->
+      <app-magazzino *ngIf="testFeature === 'list-maga'"></app-magazzino>
+      <app-shop-list *ngIf="testFeature !== 'list-maga'"></app-shop-list>
+    </div>
+  </div>
+</div>

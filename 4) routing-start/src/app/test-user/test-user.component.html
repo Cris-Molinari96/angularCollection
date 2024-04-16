@@ -1,0 +1,14 @@
+
+  <div class="container text-center">
+    <div>
+
+      <a
+        [routerLink]= "['./tests', user.id, user.status]"
+        *ngFor="let user of listUser"
+      >
+        {{user.name}} {{user.status}}
+      </a>
+
+    </div>
+  </div>
+<router-outlet></router-outlet>

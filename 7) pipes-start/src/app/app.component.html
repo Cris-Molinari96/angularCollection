@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <div class="container">
+        <label>Quanti caratteri vuoi visualizzare?</label>
+        <input [(ngModel)]="filterString" type="text">
+      </div>
+
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <div class="container">
+          <p>App status: {{ asyncFunction | async }}</p>
+        </div>
+
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            *ngFor="let server of servers | filter:filterString:'status'"
+            [ngClass]="getStatusClasses(server)">
+          <span
+            class="badge">
+            {{ server.status }}
+          </span>
+            <strong>{{ server.name | shortString:numeroCaratteri }}</strong> | {{ server.instanceType | uppercase }} |
+            {{ server.started | date:'fullDate' }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">
+    <span class="material-icons md-home mb-1" title="home" aria-hidden="true"></span>
+      AlphaShop
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Blocco dei menu -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" title="Prodotti" routerLink="/articoli">
+          <span class="material-icons md-archive" title="prodotti" aria-hidden="true"></span>
+            Prodotti
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" title="Promozioni" routerLink="#">
+          <span class="material-icons md-campaign" aria-hidden="true"></span>
+            Promozioni
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" title="Fidelity" routerLink="#">
+            <span class="material-icons md-card_membership"></span>
+            Fidelity
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" title="Ordini" routerLink="#">
+            <span class="material-icons md-local_grocery_store"></span>
+            Ordini
+          </a>
+        </li>
+      </ul>
+      <!-- Motore di Ricerca -->
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Cerca</button>
+      </form>
+
+      <!-- Menu contestuale dell'utente -->
+      <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle thumbnail dduser" data-bs-toggle="dropdown" aria-expanded="false">
+          <img class="img-circle" src="/assets/images/user.png" width="38" height="38">
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/login">Accedi</a></li>
+          <li><a class="dropdown-item" href="#">Registrati</a></li>
+          <li><a class="dropdown-item" href="#">Disabilita</a></li>
+          <li><hr class="dropdown-divider"></li>
+<!-- ! Utilizza il metodo isLogged per determinare la comparsa di questo pulsante Logout,
+! tra l'altro non c'e ne facciamo nulla del pulsante se prima non ho fatto l'accesso  -->
+<!-- ! infatti tramite la direttiva ngIf andiamo a determinare proprio questo-->
+          <li><a class="dropdown-item" *ngIf="basicAuth.isLogged()" routerLink="/logout">Logout {{basicAuth.loggedUser()}} </a></li> <!-- * se l'utente , il metodo ritornerà true, e quindi vedremo il logout-->
+          <li><a class="dropdown-item disabled" *ngIf="!basicAuth.isLogged()">Logout</a></li> <!-- * se l'utente è loggato, il metodo ritornerà true,
+          * col bang operator (!) sarà false, e quindi non vedremo logout e il pulsante disabilitato-->
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</nav>
+

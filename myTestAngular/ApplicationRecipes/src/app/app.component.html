@@ -1,0 +1,16 @@
+<!-- Per poter ricevere dei dati dal componente figlio dobbiamo far riferimento alla
+proprietà della classe ts headerComponent(featureSelected) e legarla ad un evento
+della classe ts app.component -->
+<app-header></app-header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Stiamo avvolggendo i componenti in questi div -->
+      <router-outlet></router-outlet>
+      <!--<app-home *ngIf="featuredSelect ==='home'"></app-home>-->
+    </div>
+  </div>
+</div>
+
+

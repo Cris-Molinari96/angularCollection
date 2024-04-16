@@ -1,0 +1,17 @@
+<h2>Benvenuto, aggiungi il tuo server</h2>
+<h5>{{title}}</h5>
+
+<div class="container">
+  <hr>
+<!--  stiamo legando l'evento serverCreated, ad onAddServer -->
+  <app-handler-server
+  (serverCreated) = onAddServer($event);
+  ></app-handler-server>
+
+<div class="row">
+  <div class="col-xs-12">
+    <app-server *ngFor="let server of listServer"
+                [serverServ]="server"></app-server>
+  </div>
+</div>
+</div>

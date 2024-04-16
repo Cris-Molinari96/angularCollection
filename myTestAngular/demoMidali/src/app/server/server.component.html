@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="justify-content-center">
+
+    <label>Server name</label>
+    <!--? 1) Per il binding, recuperiamo il valore di un input e lo mandiamo a schermo tramite l'intrappolazione tra stringhe-->
+    <!--    <input type="text" class="form-control" (input)="updateServer($event)"/>-->
+
+    <!--! 2) Modo utilizzando il two-way-binding [(ngModel)]-->
+    <input type="text" class="form-control" [(ngModel)]="serverName"/>
+
+    <p>{{serverName}}</p>
+
+    <!-- * Prop. binding ossia stiamo legando una proprietà di un elemento html ad un field della classe ts-->
+    <button class="btn btn-primary" [disabled]="!allowNewServer"
+            (click)="onServerCreated()"
+    >Add server</button>
+    <button (click)="resetServerInfo()" class="btn btn-danger">Reset info server</button>
+
+    <!-- ! Direttiva ngIf, come lavora?
+     abbiamo un valore bool nella classe ts, se il bool è true visualizzeremo il paragrafo,
+     mentre se false non lo visualizzeremo. -->
+
+    <!--Abbiamo anche utilizzato un modo per sostituire il messaggio di risposta.-->
+    <p *ngIf="boolServer; else noServer">Server was created, server name: {{serverName}}</p>
+
+<!-- Verrà mostrato questo se il valore è false-->
+    <ng-template #noServer>
+      <p>No server was created!</p>
+    </ng-template>
+
+    <!-- * String interpolation, consiste nel poter richiamare un metodo o una proprietà
+    ngStyle ci sta consentendo di aggioranre il colore del server, in base ad una condizione-->
+    <p [ngStyle]="{'backgroundColor':getColor()}" > {{getServerStatus()}} </p>
+
+
+    <p>{{serverCreated}}</p>
+
+  </div>
+</div>
+
+
+
+<app-user></app-user>

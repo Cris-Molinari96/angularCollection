@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <!--Quello che facciamo in questo punto con routerLinkActiveOptions
+      è rendere dinamico l'indicatore delle pagine sulle quali si vuole entrare-->
+      <ul class="nav nav-tabs">
+        <!-- Utilizzo di routerLink (o navigate ma nelle classi typescript)
+        per avere accesso alle rotte.
+             Abbiamo visto come è possibile utilizzare [routerLink]
+              per avere accesso a percorsi dinamici
+        -->
+        <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/">Home</a></li>
+        <li role="presentation" routerLinkActive="active"><a [routerLink]="['servers']">Servers</a></li>
+        <li role="presentation" routerLinkActive="active"><a [routerLink]="['users']">Users</a></li>
+        <li role="presentation" routerLinkActive="active"><a [routerLink]="['tests']">Tests</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

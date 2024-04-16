@@ -1,0 +1,15 @@
+<div class="card mt-5" style="width: 18rem;">
+<span class="pull-right">
+<img
+  [src]="articolo.imageUrl"
+  alt="{{ recipe.name ))"
+  class="img-responsive"
+  style="max-height: 50px;">
+</span>
+  <div class="card-body">
+    <h4 class="list-group-item-heading">{{articolo.name}}</h4>
+<!--    <p class="list-group-item">{{articolo.description }}</p>-->
+    <p>{{articolo.price}}</p>
+    <a href="#" class="btn btn-primary" (click)="infoArticolo()">Go somewhere</a>
+  </div>
+</div>

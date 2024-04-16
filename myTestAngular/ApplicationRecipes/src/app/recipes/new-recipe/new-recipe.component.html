@@ -1,0 +1,23 @@
+<div class="container p-5">
+  <h5>Aggiungi ricetta</h5>
+  <form (ngSubmit)="onSubmit()" [formGroup]="initForm">
+
+    <div class="form-group">
+      <label for="name">Nome:</label>
+      <input type="text" class="form-control" id="name" required formControlName="name">
+    </div>
+    <div class="form-group">
+      <label for="description">Descrizione:</label>
+      <textarea class="form-control" id="description" rows="3" required formControlName="description"></textarea>
+    </div>
+
+    <div class="form-group mt-4">
+      <label for="image">Immagine:</label>
+      <input type="text" class="form-control-file" id="image" accept="image/*" formControlName="image" #pathImage>
+    </div>
+    <!--    <div class="row"><div class="col-xs-12"><img [src]="" ]="!pathImage.value" alt=""></div></div>-->
+
+
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="!initForm.valid">Salva ricetta</button>
+  </form>
+</div>

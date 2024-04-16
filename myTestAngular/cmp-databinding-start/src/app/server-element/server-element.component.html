@@ -1,0 +1,12 @@
+<!--questo template viene utilizzato per mostrare tutti gli elementi che sono contenuti nell'array-->
+<!--Già sapevamo in anticipo che questo componente serviva per dare una rappresentazione al singolo elemento-->
+<div
+  class="panel panel-default">
+  <div class="panel-heading">{{ element.name }}</div>
+  <div class="panel-body">
+    <p>
+      <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content}}</strong>
+      <em *ngIf="element.type === 'blueprint'" style="color:blue">{{ element.content }}</em>
+    </p>
+  </div>
+</div>

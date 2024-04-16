@@ -1,0 +1,17 @@
+<div class="row mt-5">
+    <div class="col-xs-12">
+        <button class="btn btn-success" (click)="addRecipes()">Add new recipe</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <!--    Nel componente figlio viene gestita la render verso un altro componente tramite il
+        routerLink il quale viene recuperato da detail.component-->
+        <app-recipe-item
+                *ngFor="let recipeEl of listRecipes;let i = index"
+                [recipe]="recipeEl"
+        >
+        </app-recipe-item>
+    </div>
+</div>

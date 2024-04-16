@@ -1,0 +1,4 @@
+<div class="container">
+  <app-articolo *ngFor="let articoloEl of listArticolo" [articolo] = "articoloEl"
+  (articoloSelezionato)="infoArticolo(articoloEl)"></app-articolo>
+</div>

@@ -1,0 +1,8 @@
+/* Questo custom style può essere
+applica sugli input e text area,
+consentendo di visualizzare in vista
+dove si è verificato l'errore*/
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched{
+  border:1px solid red;
+}
